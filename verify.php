@@ -45,13 +45,13 @@ if ($success === true)
 
 
 $_SESSION['reload_block']="block";
-  $stmn = $pdo->prepare('INSERT INTO table_name
-           (payments_id, orderId, transaction_amount, transation_status) VALUES ( :uname, :pwd, :mb, :em)');//replace table_name with urs
+  $stmn = $pdo->prepare('INSERT INTO payment
+           (payments_id, orderId, transaction_amount, transaction_status) VALUES ( :uname, :pwd, :mb, :em)');//replace table_name with urs
            $stmn->execute(array(
                    ':uname' => $_POST['razorpay_payment_id'],
                    ':pwd' => $_SESSION['razorpay_order_id'],
                    ':mb' => $_SESSION['amount'],
-                   ':em' => "done"
+                   ':em' => "Successfull"
 
               )
             );}
